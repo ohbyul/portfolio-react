@@ -37,6 +37,25 @@ export async function actionDownloadS3Data(data) {
     });
 }
 
+export async function actionDownloadAllS3Data(data) {
+  let { zipName ,boardId } =data
+  let result
+  let fileName = zipName.replace(/"."/gi, '_');
+
+  await axios.post(`/api/common/s3/download-all/` + encrypt(boardId) )
+      .then((res) => {
+        let bytes = new Uint8Array(res.data.zipBuffer.data);
+        let blob = new Blob([bytes], {type: "application/zip"});
+        let link = document.createElement('a');
+        link.href = window.URL.createObjectURL(blob);
+        link.download = `${fileName}_${timeStamp()}.zip`
+        link.click();
+        link.remove();
+      }
+  )
+
+  return result
+}
 
 // 파일 데이터
 export async function actionGetS3File(data) {
@@ -57,33 +76,4 @@ export async function actionGetS3File(data) {
     });
 
     return result;
-}
-
-export async function actionGetUpperCodeList(data) {
-  let result;
-  await axios.get("/api/common/upper-code-list", {params: data})
-    .then(res => {
-      result = res.data
-    })
-    return result
-}
-
-export async function actionDownloadAllS3Data(data) {
-  let { zipName ,boardId } =data
-  let result
-  let fileName = zipName.replace(/"."/gi, '_');
-
-  await axios.post(`/api/common/s3/download-all/` + encrypt(boardId) )
-      .then((res) => {
-        let bytes = new Uint8Array(res.data.zipBuffer.data);
-        let blob = new Blob([bytes], {type: "application/zip"});
-        let link = document.createElement('a');
-        link.href = window.URL.createObjectURL(blob);
-        link.download = `${fileName}_${timeStamp()}.zip`
-        link.click();
-        link.remove();
-      }
-  )
-
-  return result
 }

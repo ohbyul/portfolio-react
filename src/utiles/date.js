@@ -1,36 +1,13 @@
 import moment from "moment";
 
-export function getCurrentDate(){
-  const date = new Date();
-  let year = date.getFullYear().toString();
-  let month = date.getMonth() + 1;
-  month = month < 10 ? '0' + month.toString() : month.toString();
-  let day = date.getDate();
-  day = day < 10 ? '0' + day.toString() : day.toString();
-  let hour = date.getHours();
-  hour = hour < 10 ? '0' + hour.toString() : hour.toString();
-  let minites = date.getMinutes();
-  minites = minites < 10 ? '0' + minites.toString() : minites.toString();
-  let seconds = date.getSeconds();
-  seconds = seconds < 10 ? '0' + seconds.toString() : seconds.toString();
-  
-  return year + '-'+  month + '-'+  day + ' '+  hour + ':'+  minites;
-}
+
+export const getNowDateTime = () => {
+  return moment().format('YYYY-MM-DD HH:mm:ss')
+};
 
 export function dateFormat(date){
-  if(!date){
-    return 
-  }
-  let result = moment(date).format('YYYY-MM-DD')
-  return result;
-}
-
-export function dateHourMinFormat(date){
-  if(!date){
-    return 
-  }
-  let result = moment(date).format('YY-MM-DD HH:mm')
-  return result;
+  if(!date)return
+  return moment(date).format('YYYY-MM-DD');
 }
 
 export function dateTimeFormat(date){
@@ -88,20 +65,16 @@ export function getWesternAge(birthday){
 
 
 export function dateFormatValid(date){
-  let result = moment(date, 'YYYY-MM-DD',true).isValid()
-  return result;
+  return moment(date, 'YYYY-MM-DD',true).isValid();
 }
 
 
 export function dateTimeSubtract(startDate , endDate){
   if(!startDate || !endDate)return;
   
-  const sTime = moment(startDate , 'YYYY-MM-DD HH:mm:ss')
-  const eTime = moment(endDate , 'YYYY-MM-DD HH:mm:ss')
+  const start = moment(startDate , 'YYYY-MM-DD HH:mm:ss')
+  const end = moment(endDate , 'YYYY-MM-DD HH:mm:ss')
 
-  let result = moment.duration(eTime.diff(sTime)).asMinutes()
-  const hour = Math.floor(result/60)
-  const min = result%60
-
+  let result = moment.duration(end.diff(start)).asMinutes()
   return result;
 }

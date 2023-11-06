@@ -52,9 +52,7 @@ export function upLoadFile(file) {
 }
 
 export const getByteSize = (file_size) => {
-
     let size = String(file_size).length < 7 ? `${(file_size / 1024).toFixed(2)} KB` : `${(file_size / 1024000).toFixed(2)} MB`;
-
     return size;
 };
 
@@ -65,5 +63,5 @@ export const onDownS3 = (file) => {
         fileName: file.saveFileNm,
         originalFileNm: file.originalFileNm
     }
-    actionDownloadS3Data(params).then((res) => { })
+    actionDownloadS3Data(params).then((res) => {})
 }

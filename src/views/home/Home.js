@@ -5,7 +5,7 @@ import "swiper/css";// 슬라이드 임포트
 import "swiper/css/pagination";// 슬라이드 임포트
 
 const Home = (props) => {
-    
+
     return (
         <div className="section-wrap">
             <div className="main-header-bg"></div>

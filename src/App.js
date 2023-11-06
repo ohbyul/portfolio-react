@@ -3,29 +3,28 @@ import { HashRouter, Route, Redirect, Switch, BrowserRouter } from 'react-router
 import {useDispatch, useSelector} from "react-redux";
 import axios from 'axios';
 import { hot } from 'react-hot-loader'
-import moment from 'moment';
-
-import "@reach/dialog/styles.css";
-import 'jquery-ui-bundle'
-
-import './assets/css/fonts.css'//폰트 css
-// import './assets/css/style.css';// 추가 css
-import "react-datepicker/dist/react-datepicker.css";    // date/time/date-time picker
-
-import { getCookie, setCookie, removeCookie } from "./utiles/cookie";
-
-import Loading from "./views/components/Loading";                             // loding-spiner
-import AlertDialogComponent from "./views/components/AlertDialogComponent";   // alert
-import { toast , ToastContainer } from "react-toastify"                       // toast
-import 'react-toastify/dist/ReactToastify.css';
-
 import {
   BrowserView,
   MobileView,
   isBrowser,
   isMobile
 } from "react-device-detect";
-import ScrollToTop from './utiles/scroll';
+
+import "@reach/dialog/styles.css";
+import 'jquery-ui-bundle'
+
+import './assets/css/fonts.css'     //폰트 css
+import './assets/css/common.css'    //공통 css
+import './assets/css/style.css';    // 추가 css
+import "react-datepicker/dist/react-datepicker.css";    // date/time/date-time picker
+import 'react-toastify/dist/ReactToastify.css';
+
+
+import Loading from "./views/components/Loading";                             // loding-spiner
+import ScrollToTop from './utiles/scroll';                                    //scroll
+import AlertDialogComponent from "./views/components/AlertDialogComponent";   // alert
+import { toast , ToastContainer } from "react-toastify"                       // toast
+import { getCookie, setCookie, removeCookie } from "./utiles/cookie";
 
 
 const DefaultLayout = React.lazy(() => import('./layout/DefaultLayout'))      // Main Containers
@@ -54,18 +53,10 @@ function App() {
   }
   //loading spiner
   const [loading, setLoading] = useState(false)
-  let axiosCnt = useRef(0)
   
-  //login info
-  let token = getCookie('ohbyul');
-
   useEffect(()=>{
-
     //axios 호출시 인터셉트
     axios.interceptors.request.use(function (config) {
-
-      token = getCookie('ohbyul');                                   //쿠키세팅
-      config.headers.common['Authorization'] = `Bearer ${token}`;     //토큰세팅
       return config
     }, function (error) {
       return Promise.reject(error);
@@ -76,52 +67,35 @@ function App() {
       return response;
     }, function (error) {
       if (error.response.status == 401) {
-        redirectLogin();
+        redirectHome();
       }
-      else {
-        setAlertDialogObject({
-          description: '입력하신 주소가 정확한지 다시 한번 확인해 주시기 바랍니다.',
-          close: ()=>setShowAlertDialog(false)
-        })
-        setShowAlertDialog(true)
-      }
-
       return Promise.reject(error);
     });
   },[]);
 
-  const redirectLogin = () => {
-    removeCookie('ohbyul');
-    sessionStorage.clear();
-    window.location.replace("/login")
+  const redirectHome = () => {
+    window.location.replace("/")
   }
 
   return (
     <>
-      <BrowserView>
-        <BrowserRouter>
-          <ScrollToTop/>
-          <React.Suspense fallback={<Loading loading={loading}/>}>
-            <Switch>
-              {
-                <Route path="/" name="Home" render={(props) =>{
-                    return <DefaultLayout {...props} funcAlertMsg={funcAlertMsg} toastSuccess={toastSuccess}/> 
-                  }}
-                />
-              }
+      <BrowserRouter>
+        <ScrollToTop/>
+        <React.Suspense fallback={<Loading loading={loading}/>}>
+          <Switch>
+            {
+              <Route path="/" name="Home" render={(props) =>{
+                  return <DefaultLayout {...props} funcAlertMsg={funcAlertMsg} toastSuccess={toastSuccess}/> 
+                }}
+              />
+            }
+          </Switch>
+        </React.Suspense>
+      </BrowserRouter>
 
-            </Switch>
-          </React.Suspense>
-        </BrowserRouter>
-        <Loading loading={loading}/>
-      </BrowserView>
-
-
+      <Loading loading={loading}/>
       <ToastContainer />
-      {
-          showAlertDialog && <AlertDialogComponent cancelRef={cancelRef} description={alertDialogObject.description} close={alertDialogObject.close}/>
-        } 
-
+      {showAlertDialog && <AlertDialogComponent cancelRef={cancelRef} description={alertDialogObject.description} close={alertDialogObject.close}/>} 
     </>
   )
 
