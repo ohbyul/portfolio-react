@@ -1,64 +1,70 @@
-# [React](https://reactjs.org/) &middot;[![npm version](https://img.shields.io/badge/npm-8.11.0-green)](https://www.npmjs.com/package/react) [![react](https://img.shields.io/badge/react-17.0.2-blue)](https://reactjs.org/docs/how-to-contribute.html#your-first-pull-request) [![webpack](https://img.shields.io/badge/webpack-5.52.1-orange)](https://webpack.js.org/)
+# Getting Started with Create React App
 
-React is a JavaScript library for building user interfaces.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-* **Declarative:** React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes. Declarative views make your code more predictable, simpler to understand, and easier to debug.
-* **Component-Based:** Build encapsulated components that manage their state, then compose them to make complex UIs. Since component logic is written in JavaScript instead of templates, you can easily pass rich data through your app and keep the state out of the DOM.
-* **Learn Once, Write Anywhere:** We don't make assumptions about the rest of your technology stack, so you can develop new features in React without rewriting existing code. React can also render on the server using Node and power mobile apps using [React Native](https://reactnative.dev/).
+## Available Scripts
 
+In the project directory, you can run:
 
-[Learn how to use React in your project](https://reactjs.org/docs/getting-started.html).
+### `npm start`
 
-## Description
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-COMMON PORTAL - Front-END
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-해당 프로젝트는 React 로 구성된 프론트엔드 프로젝트
+### `npm test`
 
-<!-- 백엔드의 경우 GIT 경로는 아래와 같습니다. -->
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-<!-- DTVERSE(디티버스) MEMBER PORTAL BACK-END 소스 바로가기 - [GITLAB](https://gitlab.com/dtverse/be-dtverse-memberportal) -->
+### `npm run build`
 
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-[React](https://github.com/facebook/react) framework TypeScript starter repository.
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-## Installation
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-```bash
-$ npm install
-```
-## Running the app
+### `npm run eject`
 
-```bash
-# 로컬 환경에서 구동시
-$ npm run dev
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-# 운영환경에서 구동시 빌드 후 구동
-$ npm run build
-$ npm run prod
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-# PM2로 구동시
-$ npm run build
-$ pm2 start dist/main.js --name be-memberportal
-```
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-```
-port 설정은 webpack.dev.js proxy 설정
-localhost:3000 접속
+## Learn More
 
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-## Distribute
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-```bash
-$ npm run build
-```
+### Code Splitting
 
-## 환경파일
-   .env (db 접속정보 및 구동 port 설정됨) -> git에서 관리하지 않고 개발자 로컬에서 관리함
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-## Creation date
-2023.11.06 by b.oh
-### License
+### Analyzing the Bundle Size
 
-React is [MIT licensed](https://github.com/facebook/react/blob/main/LICENSE).
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
