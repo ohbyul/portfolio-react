@@ -60,25 +60,12 @@ function App() {
   let token = getCookie('ohbyul');
 
   useEffect(()=>{
-    if (process.env.NODE_ENV === 'production') {
-      // 운영서버 배포 빌드 날짜를 로컬스토리지에 세팅
-      fetch("/meta.json?date="+moment().unix())
-          .then((response) => response.json())
-          .then((meta) => {
-            window.localStorage.setItem('buildDate', meta.buildDate)
-          });
-    }
 
     //axios 호출시 인터셉트
     axios.interceptors.request.use(function (config) {
 
       token = getCookie('ohbyul');                                   //쿠키세팅
       config.headers.common['Authorization'] = `Bearer ${token}`;     //토큰세팅
-      
-      axiosCnt.current += 1;
-      axiosCnt.current != 0? setLoading(true) : ''
-      // if(!config.url.includes('autoLogin')){}
-      // config.withCredentials = true;
       return config
     }, function (error) {
       return Promise.reject(error);
@@ -86,15 +73,8 @@ function App() {
 
     //axios 호출 종료시 인터셉트
     axios.interceptors.response.use(function (response) { 
-      
-      axiosCnt.current -= 1;
-      axiosCnt.current == 0? setLoading(false) : ''
-
       return response;
     }, function (error) {
-      axiosCnt.current -= 1;
-      axiosCnt.current == 0? setLoading(false) : ''
-
       if (error.response.status == 401) {
         redirectLogin();
       }
