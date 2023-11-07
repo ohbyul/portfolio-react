@@ -34,7 +34,7 @@ export const makeRandomNumber = (num) => {
 }
 
 export const utilSetListSearch = (pathType) => {
-    let search = location.search;
+    let search = window.location.search;
     let searchArr;
 
     if (search.substring(0, 1) === '?') {

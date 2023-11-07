@@ -1,11 +1,11 @@
 import axios from "axios";
 import { encrypt } from '../../utiles/crypto';
-import { timeStamp } from '../../utiles/common';
+import { getNowDateTime } from "../../utiles/date";
 
-export async function actionGetCodeList(data) {
 
+export async function actionGetHello() {
   let result;
-  await axios.get("/api/common/code-list", { params: data })
+  await axios.get("/api/app/hello")
     .then(res => {
       result = res.data
     })
@@ -33,7 +33,7 @@ export async function actionDownloadS3Data(data) {
       
     })
     .catch((error) => {
-      toast.error('File download failed.');
+      console.log('File download failed.');
     });
 }
 
@@ -48,7 +48,7 @@ export async function actionDownloadAllS3Data(data) {
         let blob = new Blob([bytes], {type: "application/zip"});
         let link = document.createElement('a');
         link.href = window.URL.createObjectURL(blob);
-        link.download = `${fileName}_${timeStamp()}.zip`
+        link.download = `${fileName}_${getNowDateTime()}.zip`
         link.click();
         link.remove();
       }
@@ -72,7 +72,7 @@ export async function actionGetS3File(data) {
       result = new File([res.data], data.fileName, {type: `application/${ext}`});
     })
     .catch((error) => {
-      toast.error('File download failed.');
+      console.log('File download failed.');
     });
 
     return result;
