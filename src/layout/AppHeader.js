@@ -19,14 +19,14 @@ const AppHeader = (props) => {
     const [ menuList , setMenuList] =useState([]) 
 
     useEffect(()=>{
-        setMenuList(routes.menu)
+        setMenuList(routes.menu.filter(x=>x.stage === 1))
     },[routes])
     
 
     return (
         <div id="header">
             <div className="header-layer">
-                <div className="header-logo">
+                <div className="header-logo" style={{border : '1px solid black'}}>
                     {/* <Link to="/"><img src="/images/logo.svg" /></Link> */}
                     <Link to="/"><h1>BYEOL</h1></Link>
                 </div>
@@ -34,12 +34,18 @@ const AppHeader = (props) => {
                     <ul className="header-gnb">
                         {
                             menuList?.map((menu , index)=>{
+                                const subMenus = routes.menu.filter(x=>x.stage === 2 && x.upperName === menu?.name)
                                 return(
-                                    <li key={index}>
+                                    <li key={index} onClick={() => props.history.push(menu.path)}>
                                         <div>{menu?.name}</div>
                                         <ul className="header-lnb">
-                                            <li onClick={() => props.history.push('/')}>BASIC1</li>
-                                            <li onClick={() => props.history.push('/')}>BASIC2</li>
+                                            {
+                                                subMenus?.map((item,subIdx) => {
+                                                    return(
+                                                        <li key={subIdx} onClick={() => props.history.push(item?.path)}>{item.name}</li>
+                                                    )
+                                                })
+                                            }
                                         </ul>
                                     </li>
                                 )
