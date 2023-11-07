@@ -2,26 +2,24 @@ import React from 'react'
 
 const Home = React.lazy(() => import('./views/home/Home'))
 
-/** 
- *  1. url 소문자
- *  2. role 추가 시 ,(콤마)로 작성
- */
+const About = React.lazy(() => import('./views/about/About'))
+const Skill = React.lazy(() => import('./views/skill/Skill'))
+const Career = React.lazy(() => import('./views/career/Career'))
+const Project = React.lazy(() => import('./views/project/Project'))
+const Contact = React.lazy(() => import('./views/contact/Contact'))
+
+
 const routes = {
-  menu: [
-    { exact: true, name: '메인 페이지', component: Home, path: '/', auth: 'ALL' },
-  ],
-  navi: [
-    { key: 'main', value: 'Main', level: 1, urlYn: true, url: '/' },
+    menu : [
+      { exact: true, stage : 0 , name: 'Home',     component: Home,          path: '/'},
 
-    { key: 'write', value: '등록', level: 3 },
-    { key: 'update', value: '수정', level: 3 },
-    { key: 'detail', value: '상세', level: 3 },
-    { key: 'list', value: '목록', level: 3 },
-  ],
-  subNavi: [
-  ]
+      { exact: true, stage : 1 , name: 'About',    component: About,         path: '/about'},
+      { exact: true, stage : 1 , name: 'Skill',    component: Skill,         path: '/skill'},
+      { exact: true, stage : 1 , name: 'Career',   component: Career,        path: '/career'},
+      { exact: true, stage : 1 , name: 'Project',  component: Project,       path: '/project'},
+      { exact: true, stage : 1 , name: 'Contact',  component: Contact,       path: '/contact'},
+
+    ]
 }
-
-
 
 export default routes

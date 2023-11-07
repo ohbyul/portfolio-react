@@ -19,6 +19,7 @@ import './assets/css/style.css';    // 추가 css
 import "react-datepicker/dist/react-datepicker.css";    // date/time/date-time picker
 import 'react-toastify/dist/ReactToastify.css';
 
+import 'bootstrap/dist/css/bootstrap.css';    //부트스트랩
 
 import Loading from "./views/components/Loading";                             // loding-spiner
 import ScrollToTop from './utiles/scroll';                                    //scroll

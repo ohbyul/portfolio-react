@@ -20,10 +20,10 @@ const Home = (props) => {
 
     return (
         <div className="section-wrap">
-            {/* <div className="main-header-bg"></div> */}
+            <div className="main-header-bg"></div>
             <div className="main">
                 <div>{hello}</div>
-                {/* 
+                 
                 <Swiper className="con-header mySwiper"
                     modules={[Autoplay, Pagination, Navigation]}
                     pagination={{
@@ -42,8 +42,15 @@ const Home = (props) => {
                         <div>2</div>
                         <div className="cursor" onClick={() => props.history.push('/dtx/info')}><img src="../images/main_slide2.jpg" /></div>
                     </SwiperSlide>
-                </Swiper> */}
-
+                </Swiper>
+                <button type="button" class="btn btn-primary">Primary</button>
+<button type="button" class="btn btn-secondary">Secondary</button>
+<button type="button" class="btn btn-success">Success</button>
+<button type="button" class="btn btn-danger">Danger</button>
+<button type="button" class="btn btn-warning">Warning</button>
+<button type="button" class="btn btn-info">Info</button>
+<button type="button" class="btn btn-light">Light</button>
+<button type="button" class="btn btn-dark">Dark</button>
                 <div className="con-body"></div>
                 <div className="con-footer"></div>
             </div>

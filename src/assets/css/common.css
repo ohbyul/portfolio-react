@@ -856,7 +856,7 @@ select:disabled {
 .header-gnb>li {
     position: relative;
     padding:0 0 4px;
-    width: 240px;
+    width: 150px;
     height: 100px;
     text-align: center;
     display: flex;
