@@ -13,13 +13,11 @@ import {
 import "@reach/dialog/styles.css";
 import 'jquery-ui-bundle'
 
-import './assets/css/fonts.css'     //폰트 css
-import './assets/css/common.css'    //공통 css
-import './assets/css/style.css';    // 추가 css
-import "react-datepicker/dist/react-datepicker.css";    // date/time/date-time picker
-import 'react-toastify/dist/ReactToastify.css';
+import '../src/assets/css/index.css';
+import '../src/assets/css/common.css';
 
 import 'bootstrap/dist/css/bootstrap.css';    //부트스트랩
+import { DarkThemeToggle, Flowbite, } from 'flowbite-react';
 
 import Loading from "./views/components/Loading";                             // loding-spiner
 import ScrollToTop from './utiles/scroll';                                    //scroll
@@ -28,10 +26,12 @@ import { toast , ToastContainer } from "react-toastify"                       //
 import { getCookie, setCookie, removeCookie } from "./utiles/cookie";
 
 
+
 const DefaultLayout = React.lazy(() => import('./layout/DefaultLayout'))      // Main Containers
 
 function App() {
   const dispatch = useDispatch()
+  const initialMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
   //--------------- alert ---------------
   const cancelRef = React.useRef();
   const [showAlertDialog, setShowAlertDialog] = useState(false)
@@ -86,7 +86,11 @@ function App() {
           <Switch>
             {
               <Route path="/" name="Home" render={(props) =>{
-                  return <DefaultLayout {...props} funcAlertMsg={funcAlertMsg} toastSuccess={toastSuccess}/> 
+                  return (
+                    <Flowbite theme={{ dark: initialMode }}>
+                      <DefaultLayout {...props} funcAlertMsg={funcAlertMsg} toastSuccess={toastSuccess} DarkThemeToggle={DarkThemeToggle} isDark={initialMode}/> 
+                    </Flowbite>
+                  )
                 }}
               />
             }

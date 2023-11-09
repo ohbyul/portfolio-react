@@ -3,72 +3,49 @@ import { Link, withRouter } from "react-router-dom"
 import routes from '../routes'
 
 const AppHeader = (props) => {
+    const { DarkThemeToggle } = props
     //--------------- session ---------------
     const path = window.location.pathname;
     //--------------- session ---------------
-    // dropdown
-    const dropRef = useRef(null);
-    const [dropdown, setDropdown] = useState(false)
-    const toggleDrop = e => {
-        if (dropdown && (!dropRef.current || !dropRef.current.contains(e.target))) setDropdown(false)
-    }
-    useEffect(() => {
-        window.addEventListener('click', toggleDrop);
-        return () => {window.removeEventListener('click', toggleDrop)}
-    })
-    const [ menuList , setMenuList] =useState([]) 
+    const [menuList, setMenuList] = useState([])
 
-    useEffect(()=>{
-        setMenuList(routes.menu.filter(x=>x.stage === 1))
-    },[routes])
-    
+    useEffect(() => {
+        setMenuList(routes.menu.filter(x => x.stage === 1))
+    }, [routes])
+
 
     return (
-        <div id="header">
-            <div className="header-layer">
-                <div className="header-logo" style={{border : '1px solid black'}}>
-                    {/* <Link to="/"><img src="/images/logo.svg" /></Link> */}
-                    <Link to="/"><h1>BYEOL</h1></Link>
-                </div>
-                <div className="header-grid">
-                    <ul className="header-gnb">
-                        {
-                            menuList?.map((menu , index)=>{
-                                const subMenus = routes.menu.filter(x=>x.stage === 2 && x.upperName === menu?.name)
-                                return(
-                                    <li key={index} onClick={() => props.history.push(menu.path)}>
-                                        <div>{menu?.name}</div>
-                                        <ul className="header-lnb">
-                                            {
-                                                subMenus?.map((item,subIdx) => {
-                                                    return(
-                                                        <li key={subIdx} onClick={() => props.history.push(item?.path)}>{item.name}</li>
-                                                    )
-                                                })
-                                            }
-                                        </ul>
-                                    </li>
-                                )
-                            })
-                        }
-                    </ul>
-                    <div className="gnb-bg"></div>
-                </div>
-                <ul className="header-utility">
-                    <li className={`user ${dropdown ? 'active' : ''}`} onClick={() => setDropdown(!dropdown)}>
-                        <div><span>Contect</span></div>
-                        {
-                            dropdown &&
-                                <ul className="dropdown-list opened" ref={dropRef}>
-                                    <li>1</li>
-                                    <li>2</li>
-                                </ul>
-                        }
-                    </li>
-                </ul>
-            </div>
+        <header >
+            <nav className="border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
+                <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+                    <a href="/" className="flex items-center">
+                        <img src="https://flowbite.com/docs/images/logo.svg" className="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
+                        <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">BYEOL</span>
+                    </a>
 
-        </div>
+                    <div className="flex items-center lg:order-2">
+                        <DarkThemeToggle />
+                    </div>
+
+                    <div className="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
+                        <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+                            {
+                                menuList?.map((menu, index) => {
+                                    const subMenus = routes.menu.filter(x => x.stage === 2 && x.upperName === menu?.name)
+                                    return (
+                                        <li key={index} onClick={() => props.history.push(menu.path)}>
+                                            <div href="#" className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">
+                                                {menu?.name}
+                                            </div>
+                                        </li>
+                                    )
+                                })
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
     )
 
 }

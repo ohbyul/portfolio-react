@@ -30,6 +30,8 @@
     "fabricjs-react": "^1.0.8",
     "file-saver": "^2.0.5",
     "firebase": "^9.6.7",
+    "flowbite": "^2.0.0",
+    "flowbite-react": "^0.6.4",
     "fs": "^0.0.1-security",
     "has": "^1.0.3",
     "html-react-parser": "^1.4.10",

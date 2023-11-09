@@ -1,9 +1,10 @@
 import React from 'react';
+import FormContactEmail from './FormContactEmail';
 
 const Contact = () => {
     return (
-        <div>
-            Contact
+        <div className='dark:bg-gray-800'>
+            <FormContactEmail />
         </div>
     );
 };

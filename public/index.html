@@ -10,6 +10,26 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jsmpeg/0.1/jsmpg.js"></script>
 
     <title>BYEOL OH</title>
+
+     <!-- <script src="/node_modules/flowbite/dist/flowbite.js"></script>  -->
+     <script src="flowbite/dist/flowbite.bundle.js"></script>
+     <script>
+      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+      }
+
+      // Whenever the user explicitly chooses light mode
+      localStorage.theme = 'light'
+
+      // Whenever the user explicitly chooses dark mode
+      localStorage.theme = 'dark'
+
+      // Whenever the user explicitly chooses to respect the OS preference
+      localStorage.removeItem('theme')
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

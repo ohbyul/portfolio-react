@@ -1,18 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import { AppContent, AppFooter, AppHeader } from './index'
 
-import '../assets/css/common.css'// pc공통 css
-import '../assets/css/style.css';// pc추가 css
-
 const DefaultLayout = (props) => {
   //path
   const path = window.location.pathname;
   return (
     <div id='wrap'>
-		  <AppHeader {...props} />
+      <AppHeader {...props} className='bg-white dark:bg-gray-900' />
       <div id='container'>
         <div id='contents'>
-          <AppContent  {...props}/>
+          <AppContent  {...props} />
         </div>
       </div>
       <AppFooter />
