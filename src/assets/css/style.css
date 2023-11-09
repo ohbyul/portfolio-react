@@ -1882,19 +1882,8 @@ input[name="zipCode"]{width: 205px;}
     align-items: center;
     padding:66px 50px;
     height: 500px;
-    /* background-image: url("../images/bg_main.png");
-    background-color: #dceffe;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 1280px auto; */
 }
-/* .con-header .swiper-slide>div {
-    position: absolute;
-    left: 148px;
-    top: 118px;
-    bottom:initial;
-    text-align: center;
-} */
+
 .con-header>div.swiper-pagination{
     position: absolute;
     bottom: 120px;
@@ -2873,10 +2862,6 @@ td span.important {
     background-size: contain;
     background-position: center;
 }
-.progress-step1{background-image: url("../images/step1.jpg");}
-.progress-step2{background-image: url("../images/step2.jpg");}
-.progress-step3{background-image: url("../images/step3.jpg");}
-.progress-step4{background-image: url("../images/step_cancel.jpg");}
 .progress-step4 +.pulsate-bck{
     display: none;
 }
@@ -3177,8 +3162,6 @@ max-height: 56px;
     background-repeat: no-repeat;
     background-size: 1280px auto;
 }
-.header-title.aboutdtx{background-image: url("../images/bg_header.jpg");}
-.header-title.guidance{background-image: url("../images/bg_guidance.jpg");}
 
 .header-title > div {
     position: absolute;
@@ -3274,11 +3257,6 @@ max-height: 56px;
     background-size: contain;
     background-position: center;
 }
-.migraine{background-image: url("../images/bg_migraine.jpg");}
-.adhd{background-image: url("../images/bg_adhd.jpg");}
-.ptsd{background-image: url("../images/bg_ptsd.jpg");}
-.insomnia{background-image: url("../images/bg_insomnia.jpg");}
-.heart-failure{background-image: url("../images/bg_heartfailure.jpg");}
 
 
 .step{
@@ -3307,10 +3285,6 @@ max-height: 56px;
 }
 .step>div:nth-child(1){color: #333;}
 .step>div:nth-child(2){color: #666;}
-.stage1::before{background-image: url("../images/icon_stage1.png");}
-.stage2::before{background-image: url("../images/icon_stage2.png");}
-.stage3::before{background-image: url("../images/icon_stage3.png");}
-.stage4::before{background-image: url("../images/icon_stage4.png");}
 .arr{
     display: flex;
     flex-direction: column;
@@ -3321,7 +3295,6 @@ max-height: 56px;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    background-image: url("../images/icon_arr.png");
 }
 .section-wrap > div.last-contents{max-width: none}
 .last-contents{
@@ -3338,14 +3311,6 @@ max-height: 56px;
     background-size: auto;
     background-position: center;
 }
-.last-contents.aboutdtx{
-    background-image: url("../images/bg_lastcontents.jpg");
-}
-.last-contents.guidance{
-    background-image: url("../images/bg_lastcontents2.jpg");
-    background-color:#121825
-}
-
 .write{
     margin-top:100px;
     display: flex;
@@ -3418,7 +3383,6 @@ max-height: 56px;
     right:-10px;
     width: 40px;
     height: 65px;
-    background-image: url("../images/icon_step_arr.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: auto;
@@ -3452,14 +3416,7 @@ max-height: 56px;
     background-size: auto;
     background-position: center;
 }
-.icon-stage1{background-image: url("../images/icon_step_stage1.png");}
-.icon-stage2{background-image: url("../images/icon_step_stage2.png");}
-.icon-stage3{background-image: url("../images/icon_step_stage3.png");}
-.icon-stage4{background-image: url("../images/icon_step_stage4.png");}
-.icon-stage5{background-image: url("../images/icon_step_stage5.png");}
-.icon-stage6{background-image: url("../images/icon_step_stage6.png");}
-.icon-stage7{background-image: url("../images/icon_step_stage7.png");}
-.icon-stage8{background-image: url("../images/icon_step_stage8.png");}
+
 
 
 
