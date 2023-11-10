@@ -5,7 +5,7 @@ import ComponentSection from './components/ComponentSection';
 
 const Home = (props) => {
     const [hello, setHello] = useState()
-
+    
     useEffect(() => {
         const server = process.env.SERVER
         actionGetHello().then(res => {
