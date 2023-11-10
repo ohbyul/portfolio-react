@@ -15,6 +15,7 @@ import 'jquery-ui-bundle'
 
 import '../src/assets/css/index.css';
 import '../src/assets/css/common.css';
+import '../src/assets/css/style.css';
 
 import 'bootstrap/dist/css/bootstrap.css';    //부트스트랩
 import { DarkThemeToggle, Flowbite, } from 'flowbite-react';
