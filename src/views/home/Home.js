@@ -10,6 +10,7 @@ const Home = (props) => {
         const server = process.env.SERVER
         actionGetHello().then(res => {
             setHello(res)
+            console.log(res);
         }).catch(err => {
             console.log(err);
         })

@@ -12,7 +12,7 @@ const AppFooter = (props) => {
             <div className="mx-auto w-full p-2 py-6 lg:py-8">
 
                 <div className="w-full sm:flex sm:items-center sm:justify-between">
-                    <Footer.Copyright href="#" by="byeol.oh" year={2023} />
+                    <Footer.Copyright by="byeol.oh" year={2023} />
                     <div className="mt-1 flex space-x-6 sm:mt-0 sm:justify-center">
                         <Footer.Icon href="#" icon={BsInfoCircleFill} />
                         <Footer.Icon href="#" icon={SiTistory} />
