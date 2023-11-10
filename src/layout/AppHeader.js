@@ -20,7 +20,7 @@ const AppHeader = (props) => {
                 <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
                     <a href="/" className="flex items-center">
                         <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white w150px">
-                            <img src="/logo-sub.png" className="mr-3 h-6 sm:h-9 w100p h100p" alt="Logo" />
+                            <img src="/logo-ob.png" className="mr-3 h-6 sm:h-9 w100p h100p" alt="Logo" />
                         </span>
                     </a>
 
