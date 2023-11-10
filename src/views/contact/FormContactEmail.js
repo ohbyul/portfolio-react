@@ -4,14 +4,14 @@ import { HiMail } from 'react-icons/hi';
 
 const FormContactEmail = () => {
     return (
-        <div className="flex max-w-md flex-col gap-4">
-            <div className="max-w-md">
+        <div className="flex flex-col gap-4" style={{width : '500px'}}>
+            <div className="">
                 <div className="mb-2 block">
                     <Label htmlFor="email4" value="Your email" />
                 </div>
                 <TextInput id="email4" type="email" icon={HiMail} placeholder="name@email.com" required />
             </div>
-            <div className="max-w-md">
+            <div className="">
                 <div className="mb-2 block">
                     <Label htmlFor="comment" value="Your message" />
                 </div>

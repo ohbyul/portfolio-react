@@ -7,12 +7,12 @@ const DefaultLayout = (props) => {
   return (
     <div id='wrap'>
       <AppHeader {...props} className='bg-white dark:bg-gray-900' />
-      <div id='container'>
-        <div id='contents'>
-          <AppContent  {...props} />
+      <div id='container' className='dark:bg-gray-800'>
+        <div id='contents' className='dark:bg-gray-800'>
+          <AppContent {...props} />
         </div>
       </div>
-      <AppFooter />
+      <AppFooter {...props}/>
     </div>
   )
 }

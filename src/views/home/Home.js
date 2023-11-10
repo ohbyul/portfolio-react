@@ -16,7 +16,7 @@ const Home = (props) => {
     }, [])
 
     return (
-        <div className='dark:bg-gray-800'>
+        <div className='dark:bg-gray-800 w-100 h-100'>
             <ComponentSection hello={hello}/>
         </div>
     )

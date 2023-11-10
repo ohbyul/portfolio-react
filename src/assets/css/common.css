@@ -1,6 +1,11 @@
 #container {
-
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 #contents{
+    width: 100%;
     margin-bottom: 200px;
+    display: flex;
+    justify-content: center;
 }
