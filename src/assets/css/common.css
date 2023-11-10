@@ -10,6 +10,10 @@
     justify-content: center;
 }
 
+.container-wrap{
+    margin-top: 50px;
+}
+
 .w100p{
     width: 100%;
 }
