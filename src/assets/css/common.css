@@ -3,25 +3,30 @@
     display: flex;
     justify-content: center;
 }
-#contents{
+
+#contents {
     width: 100%;
     margin-bottom: 200px;
     display: flex;
     justify-content: center;
 }
 
-.container-wrap{
+.container-wrap {
     margin-top: 50px;
 }
 
-.w100p{
+.w100p {
     width: 100%;
 }
 
-.h100p{
+.h100p {
     height: 100%;
 }
 
-.w150px{
+.w150px {
     width: 180px;
+}
+
+.uncursor {
+    cursor: default !important;
 }

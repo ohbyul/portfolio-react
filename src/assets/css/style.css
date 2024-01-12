@@ -144,3 +144,17 @@
 .jsMode .active {
     background-color: rgb(8, 145, 178);
 }
+
+/* 스킬 */
+.skill-box {
+    margin-bottom: 20px;
+}
+
+.skill-title {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.skill-logo-imgs {
+    display: flex;
+}
