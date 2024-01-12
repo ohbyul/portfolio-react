@@ -39,7 +39,7 @@
 
 /* 드로윙 */
 .canvas {
-    width: 800px;
+    width: 1000;
     height: 500px;
     background-color: white;
     border-radius: 15px;
@@ -80,6 +80,7 @@
     text-transform: uppercase;
     font-weight: 800;
     font-size: 12px;
+    margin-inline: 5px;
 }
 
 .controls_btns button:active {

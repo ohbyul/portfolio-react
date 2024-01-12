@@ -12,7 +12,7 @@ const DefaultLayout = (props) => {
           <AppContent {...props} />
         </div>
       </div>
-      <AppFooter {...props}/>
+      <AppFooter {...props} className='bg-white dark:bg-gray-800' />
     </div>
   )
 }

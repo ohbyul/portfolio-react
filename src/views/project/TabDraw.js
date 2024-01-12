@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 
 const TabDraw = () => {
     const canvasRef = useRef(null)
-    const CANVAS_SIZE_W = 800;
+    const CANVAS_SIZE_W = 1000;
     const CANVAS_SIZE_H = 500;
 
     const [range, setRange] = useState(5.0)
