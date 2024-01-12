@@ -151,7 +151,7 @@ const TabDraw = () => {
                 </div>
 
                 <div>
-                    <canvas ref={canvasRef} className="canvas"></canvas>
+                    <canvas ref={canvasRef} className={`canvas ${mode}`}></canvas>
                 </div>
 
             </div>

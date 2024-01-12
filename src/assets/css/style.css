@@ -47,6 +47,14 @@
     border: 0.5px solid rgba(0, 0, 0, 0.08);
 }
 
+.canvas.paint {
+    cursor: pointer;
+}
+
+.canvas.fill {
+    cursor: grab;
+}
+
 .controls {
     margin-bottom: 30px;
     display: flex;
