@@ -5,8 +5,10 @@ import ComponentSection from './components/ComponentSection';
 
 const Home = (props) => {
     const [hello, setHello] = useState()
-    
+
     useEffect(() => {
+
+        return;
         const server = process.env.SERVER
         actionGetHello().then(res => {
             setHello(res)
@@ -18,7 +20,7 @@ const Home = (props) => {
 
     return (
         <div className='dark:bg-gray-800 w-100 h-100'>
-            <ComponentSection hello={hello}/>
+            <ComponentSection hello={hello} />
         </div>
     )
 }
