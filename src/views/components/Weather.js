@@ -38,11 +38,11 @@ const Weather = () => {
             console.log(res);
             setCurrent(res?.current)
             setLocation(res?.location)
+        }).catch((e) => {
+            console.log(e);
         })
     }, [])
 
-
-    console.log(cityName);
 
     const getCurrentWeather = async (location) => {
         const url = `${WEATHER_API_URL}/current.json?key=${WEATHER_API_KEY}&q=${location}&aqi=no`;
