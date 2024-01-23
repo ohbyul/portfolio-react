@@ -42,6 +42,8 @@ const Weather = () => {
     }, [])
 
 
+    console.log(cityName);
+
     const getCurrentWeather = async (location) => {
         const url = `${WEATHER_API_URL}/current.json?key=${WEATHER_API_KEY}&q=${location}&aqi=no`;
         const res = await fetch(url)
